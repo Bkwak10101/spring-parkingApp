@@ -5,4 +5,8 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
     <include file="classpath:db/changelog/added-parking-entity.xml"/>
+    <include file="classpath:db/changelog/added-user-entity.xml"/>
+    <include file="classpath:db/changelog/added-vehicle-entity.xml"/>
+    <include file="classpath:db/changelog/added-spot-entity.xml"/>
+    <include file="classpath:db/changelog/added-reservation-entity.xml"/>
 </databaseChangeLog>

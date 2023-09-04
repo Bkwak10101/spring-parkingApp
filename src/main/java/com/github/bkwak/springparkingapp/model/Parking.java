@@ -2,14 +2,22 @@ package com.github.bkwak.springparkingapp.model;
 
 import jakarta.persistence.*;
 
-@Table(name = "parking")
+import java.util.List;
+
 @Entity
+@Table(name = "parking")
 public class Parking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long parking_id;
 
-    @Column(name = "spot_number")
-    private String spotNumber;
+    @OneToMany(mappedBy = "spotId")
+    private List<Spot> spots;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "address")
+    private String address;
 
 }

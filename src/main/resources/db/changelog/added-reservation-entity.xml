@@ -14,16 +14,23 @@
     <property name="floatType" value="float4" dbms="postgresql, h2"/>
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
-    <changeSet id="20170503041524-1" author="admin">
-        <createTable tableName="parking">
-            <column name="parking_id" type="bigint" autoIncrement="${autoIncrement}">
+    <changeSet id="20170503041525-1" author="admin">
+        <createTable tableName="reservation">
+            <column name="reservation_id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="varchar(255)">
-                <constraints nullable="true"/>
+            <column name="user_id" type="bigint">
+                <constraints foreignKeyName="fk_reservation_user" references="user(user_id)"/>
             </column>
-            <column name="spot_number" type="varchar(255)">
-                <constraints nullable="true"/>
+            <column name="spot_id" type="bigint">
+                <constraints foreignKeyName="fk_reservation_spot" references="spot(spot_id)"/>
+            </column>
+            <column name="vehicle_id" type="bigint">
+                <constraints foreignKeyName="fk_reservation_vehicle" references="vehicle(vehicle_id)"/>
+            </column>
+            <column name="start_date" type="timestamp">
+            </column>
+            <column name="end_date" type="timestamp">
             </column>
         </createTable>
     </changeSet>
