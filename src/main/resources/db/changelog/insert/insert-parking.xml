@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="insertInitialParkingData" author="admin">
+        <insert tableName="parking">
+            <column name="parking_id" value="1"/>
+            <column name="name" value="Parking Stradom"/>
+            <column name="address" value="Stradomska 15, 31-068 Kraków, Polska"/>
+        </insert>
+        <insert tableName="parking">
+            <column name="parking_id" value="2"/>
+            <column name="name" value="Parking Pod Wawelem"/>
+            <column name="address" value="Plac Wszystkich Świętych 10, 31-004 Kraków, Polska"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

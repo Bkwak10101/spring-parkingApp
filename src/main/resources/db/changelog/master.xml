@@ -4,9 +4,16 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-    <include file="classpath:db/changelog/added-parking-entity.xml"/>
-    <include file="classpath:db/changelog/added-user-entity.xml"/>
-    <include file="classpath:db/changelog/added-vehicle-entity.xml"/>
-    <include file="classpath:db/changelog/added-spot-entity.xml"/>
-    <include file="classpath:db/changelog/added-reservation-entity.xml"/>
+    <include file="classpath:db/changelog/tables/added-parking-entity.xml"/>
+    <include file="classpath:db/changelog/tables/added-user-entity.xml"/>
+    <include file="classpath:db/changelog/tables/added-vehicle-entity.xml"/>
+    <include file="classpath:db/changelog/tables/added-spot-entity.xml"/>
+    <include file="classpath:db/changelog/tables/added-reservation-entity.xml"/>
+
+    <include file="classpath:db/changelog/insert/insert-user.xml"/>
+    <include file="classpath:db/changelog/insert/insert-vehicle.xml"/>
+    <include file="classpath:db/changelog/insert/insert-parking.xml"/>
+    <include file="classpath:db/changelog/insert/insert-spot.xml"/>
+    <include file="classpath:db/changelog/insert/insert-reservation.xml"/>
+
 </databaseChangeLog>
