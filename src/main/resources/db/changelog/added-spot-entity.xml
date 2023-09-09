@@ -22,9 +22,6 @@
             <column name="parking_id" type="bigint">
                 <constraints foreignKeyName="fk_spot_parking" references="parking(parking_id)"/>
             </column>
-            <column name="reservation_id" type="bigint">
-                <constraints foreignKeyName="fk_spot_reservation" references="reservation(reservation_id)"/>
-            </column>
             <column name="spot_number" type="varchar(255)">
             </column>
             <column name="availability" type="boolean">

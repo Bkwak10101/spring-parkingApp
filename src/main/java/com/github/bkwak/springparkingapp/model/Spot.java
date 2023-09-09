@@ -7,20 +7,15 @@ import jakarta.persistence.*;
 public class Spot {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long spotId;
+    private Long spot_id;
 
     @ManyToOne
     @JoinColumn(name = "parking_id", nullable = false)
     private Parking parking_id;
-
-    @OneToOne
-    @JoinColumn(name = "reservation_id", nullable = false)
-    private Reservation reservation_id;
 
     @Column(name = "spot_number")
     private String spotNumber;
 
     @Column(name = "availability")
     private Boolean availability;
-
 }

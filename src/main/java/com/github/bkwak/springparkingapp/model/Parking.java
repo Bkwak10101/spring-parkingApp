@@ -11,7 +11,7 @@ public class Parking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long parking_id;
 
-    @OneToMany(mappedBy = "spotId")
+    @OneToMany(mappedBy = "parking_id")
     private List<Spot> spots;
 
     @Column(name = "name")
@@ -19,5 +19,4 @@ public class Parking {
 
     @Column(name = "address")
     private String address;
-
 }

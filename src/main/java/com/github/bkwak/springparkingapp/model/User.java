@@ -14,7 +14,7 @@ public class User {
     @OneToMany(mappedBy = "user_id")
     private List<Reservation> reservations;
 
-    @OneToMany(mappedBy = "vehicle_id")
+    @OneToMany(mappedBy = "user_id")
     private List<Vehicle> vehicles;
 
     @Column(name = "name")
