@@ -21,6 +21,7 @@
             </column>
             <column name="name" type="varchar(255)"/>
             <column name="surname" type="varchar(255)"/>
+            <column name="password" type="varchar(255)"/>
             <column name="phone" type="varchar(255)"/>
             <column name="email" type="varchar(255)"/>
         </createTable>
