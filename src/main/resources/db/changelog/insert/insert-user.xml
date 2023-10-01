@@ -9,6 +9,7 @@
             <column name="user_id" value="1"/>
             <column name="name" value="Janusz"/>
             <column name="surname" value="Kowalski"/>
+            <column name="password" value="pa$$word1"/>
             <column name="phone" value="123456789"/>
             <column name="email" value="janush@gmail.com"/>
         </insert>
@@ -16,6 +17,7 @@
             <column name="user_id" value="2"/>
             <column name="name" value="Natalia"/>
             <column name="surname" value="Nowak"/>
+            <column name="password" value="pa$$word2"/>
             <column name="phone" value="987654321"/>
             <column name="email" value="natalia@gmail.com"/>
         </insert>

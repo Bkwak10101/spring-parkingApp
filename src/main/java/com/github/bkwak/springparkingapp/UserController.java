@@ -2,11 +2,15 @@ package com.github.bkwak.springparkingapp;
 
 import com.github.bkwak.springparkingapp.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
 public class UserController {
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     private UserRepository userRepository;
@@ -17,7 +21,8 @@ public class UserController {
         User newUser = new User();
         newUser.setName(userData.getName());
         newUser.setSurname(userData.getSurname());
-        newUser.setPassword(userData.getPassword());
+        String encodedPassword = passwordEncoder.encode(userData.getPassword());
+        newUser.setPassword(encodedPassword);
         newUser.setPhone(userData.getPhone());
         newUser.setEmail(userData.getEmail());
         return userRepository.save(newUser);
