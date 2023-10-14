@@ -47,6 +47,10 @@
             <artifactId>spring-security-crypto</artifactId>
             <version>6.1.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-authorization-server</artifactId>
+        </dependency>
         <!--Testing dependencies-->
         <dependency>
             <groupId>com.h2database</groupId>
