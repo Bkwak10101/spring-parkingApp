@@ -1,4 +1,4 @@
-package com.github.bkwak.springparkingapp;
+package com.github.bkwak.springparkingapp.repository;
 
 import com.github.bkwak.springparkingapp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;

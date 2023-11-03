@@ -1,15 +1,13 @@
 package com.github.bkwak.springparkingapp.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "user")
-@Setter
-@Getter
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

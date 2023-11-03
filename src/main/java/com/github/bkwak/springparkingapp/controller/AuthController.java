@@ -1,4 +1,4 @@
-package com.github.bkwak.springparkingapp;
+package com.github.bkwak.springparkingapp.controller;
 
 import com.github.bkwak.springparkingapp.model.User;
 import com.github.bkwak.springparkingapp.service.AuthService;
