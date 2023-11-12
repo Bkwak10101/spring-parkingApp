@@ -24,6 +24,8 @@
             </column>
             <column name="registration_num" type="varchar(255)">
             </column>
+            <column name="vehicle_type" type="varchar(255)">
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

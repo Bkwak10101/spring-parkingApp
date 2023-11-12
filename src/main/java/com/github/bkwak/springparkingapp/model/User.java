@@ -13,10 +13,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long user_id;
 
-    @OneToMany(mappedBy = "user_id")
+    @OneToMany()
     private List<Reservation> reservations;
 
-    @OneToMany(mappedBy = "user_id")
+    @OneToMany()
     private List<Vehicle> vehicles;
 
     @Column(name = "name")

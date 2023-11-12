@@ -2,19 +2,17 @@ package com.github.bkwak.springparkingapp.model;
 
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
+@Data
 @Entity
 @Table(name = "reservation")
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reservation_id;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user_id;
 
     @OneToOne
     @JoinColumn(name = "spot_id", nullable = false)

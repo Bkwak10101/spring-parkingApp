@@ -12,11 +12,9 @@ public class Vehicle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long vehicle_id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user_id;
-
     @Column(name = "registration_num")
     private String registrationNum;
-}
 
+    @Column(name = "vehicle_type")
+    private String vehicleType;
+}
