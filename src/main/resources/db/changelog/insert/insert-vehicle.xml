@@ -8,10 +8,12 @@
         <insert tableName="vehicle">
             <column name="vehicle_id" value="1"/>
             <column name="registration_num" value="KRA 12345"/>
+            <column name="vehicle_type" value="Motorcycle"/>
         </insert>
         <insert tableName="vehicle">
             <column name="vehicle_id" value="2"/>
             <column name="registration_num" value="KRA 67890"/>
+            <column name="vehicle_type" value="Car"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
