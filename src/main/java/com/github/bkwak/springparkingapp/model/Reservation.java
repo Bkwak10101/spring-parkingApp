@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,9 +15,8 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reservation_id;
 
-    @OneToOne
-    @JoinColumn(name = "spot_id", nullable = false)
-    private Spot spot_id;
+    @OneToMany()
+    private List<Spot> spot;
 
     @OneToOne
     @JoinColumn(name = "vehicle_id", nullable = false)

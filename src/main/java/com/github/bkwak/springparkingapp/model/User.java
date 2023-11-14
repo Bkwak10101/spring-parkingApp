@@ -14,10 +14,10 @@ public class User {
     private Long user_id;
 
     @OneToMany()
-    private List<Reservation> reservations;
+    private List<Reservation> reservation;
 
     @OneToMany()
-    private List<Vehicle> vehicles;
+    private List<Vehicle> vehicle;
 
     @Column(name = "name")
     private String name;

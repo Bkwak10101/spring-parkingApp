@@ -26,7 +26,7 @@ public class VehicleController {
         newVehicle.setVehicleType(vehicle.getVehicleType());
         newVehicle.setRegistrationNum(vehicle.getRegistrationNum());
         User user = userRepository.findByEmail("janush@gmail.com");
-//        newVehicle.setUser_id(user);
+        newVehicle.setUser(user);
         return vehicleRepository.save(newVehicle);
     }
 }
