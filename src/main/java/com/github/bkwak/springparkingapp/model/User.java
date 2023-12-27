@@ -3,8 +3,6 @@ package com.github.bkwak.springparkingapp.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
-
 @Data
 @Entity
 @Table(name = "user")
@@ -13,11 +11,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long user_id;
 
-    @OneToMany()
-    private List<Reservation> reservation;
-
-    @OneToMany()
-    private List<Vehicle> vehicle;
+    // TODO: Fix user_reservation doesn't exist bug
+//    @OneToMany()
+//    private List<Reservation> reservation;
+//
+//    @OneToMany()
+//    private List<Vehicle> vehicle;
 
     @Column(name = "name")
     private String name;

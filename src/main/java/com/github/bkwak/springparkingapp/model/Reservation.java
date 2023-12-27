@@ -15,6 +15,10 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reservation_id;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user_id;
+
     @OneToMany()
     private List<Spot> spot;
 

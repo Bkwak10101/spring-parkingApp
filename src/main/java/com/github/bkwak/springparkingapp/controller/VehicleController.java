@@ -20,7 +20,7 @@ public class VehicleController {
     private UserRepository userRepository;
 
     @CrossOrigin
-    @PostMapping("/createVehicle")
+    @PostMapping("/create")
     public Vehicle addVehicle(@RequestBody Vehicle vehicle) {
         Vehicle newVehicle = new Vehicle();
         newVehicle.setVehicleType(vehicle.getVehicleType());
