@@ -7,8 +7,8 @@
     <changeSet id="insertInitialParkingData" author="admin">
         <insert tableName="parking">
             <column name="parking_id" value="1"/>
-            <column name="name" value="Parking Stradom"/>
-            <column name="address" value="Stradomska 15, 31-068 Kraków, Polska"/>
+            <column name="name" value="Parking 24H Kraków"/>
+            <column name="address" value="Mikołaja Kopernika 1, 31-034 Kraków, Polska"/>
         </insert>
         <insert tableName="parking">
             <column name="parking_id" value="2"/>
