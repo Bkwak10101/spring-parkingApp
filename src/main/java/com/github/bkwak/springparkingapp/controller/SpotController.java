@@ -23,6 +23,12 @@ public class SpotController {
     }
 
     @CrossOrigin
+    @GetMapping("/unavailable")
+    public @ResponseBody List<Spot> getAllUnavailableSpots() {
+        return spotRepository.findByAvailabilityFalse();
+    }
+
+    @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<Spot> getSpotById(@PathVariable Long id) {
         Optional<Spot> spot = spotRepository.findById(id);

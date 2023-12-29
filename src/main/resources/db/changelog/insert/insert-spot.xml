@@ -15,7 +15,7 @@
             <column name="spot_id" value="2"/>
             <column name="parking_id" value="1"/>
             <column name="spot_number" value="2"/>
-            <column name="availability" valueBoolean="true"/>
+            <column name="availability" valueBoolean="false"/>
         </insert>
         <insert tableName="spot">
             <column name="spot_id" value="3"/>
@@ -33,7 +33,7 @@
             <column name="spot_id" value="5"/>
             <column name="parking_id" value="1"/>
             <column name="spot_number" value="5"/>
-            <column name="availability" valueBoolean="true"/>
+            <column name="availability" valueBoolean="false"/>
         </insert>
         <insert tableName="spot">
             <column name="spot_id" value="6"/>
@@ -93,7 +93,7 @@
             <column name="spot_id" value="15"/>
             <column name="parking_id" value="2"/>
             <column name="spot_number" value="5"/>
-            <column name="availability" valueBoolean="true"/>
+            <column name="availability" valueBoolean="false"/>
         </insert>
         <insert tableName="spot">
             <column name="spot_id" value="16"/>
