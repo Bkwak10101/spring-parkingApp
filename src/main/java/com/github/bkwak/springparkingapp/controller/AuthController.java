@@ -21,21 +21,12 @@ public class AuthController {
     SessionObject sessionObject;
 
     @CrossOrigin
-    @RequestMapping(path = "/login", method = RequestMethod.GET)
-    public String login(Model model) {
-        model.addAttribute("user", new User());
-        model.addAttribute("isLogged",
-                this.sessionObject.isLogged());
-        return "login";
-    }
-
-    @CrossOrigin
     @RequestMapping(path = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute User user, Model model) {
-        log.info("HALO");
         model.addAttribute("isLogged",
                 sessionObject.isLogged());
 
+        log.info("USER: " + user);
         this.authService.login(user.getEmail(), user.getPassword());
 
         if (this.sessionObject.isLogged()) {
@@ -47,10 +38,10 @@ public class AuthController {
         }
     }
 
-    @CrossOrigin
-    @RequestMapping(path = "/logout", method = RequestMethod.GET)
-    public String logout() {
-        this.authService.logout();
-        return "redirect:/main";
-    }
+//    @CrossOrigin
+//    @RequestMapping(path = "/logout", method = RequestMethod.GET)
+//    public String logout() {
+//        this.authService.logout();
+//        return "redirect:/main";
+//    }
 }

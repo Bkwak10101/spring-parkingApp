@@ -2,10 +2,12 @@ package com.github.bkwak.springparkingapp.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table(name = "user")
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,4 +34,10 @@ public class User {
 
     @Column(name = "email")
     private String email;
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
 }

@@ -4,6 +4,7 @@ import com.github.bkwak.springparkingapp.model.User;
 import com.github.bkwak.springparkingapp.repository.UserRepository;
 import com.github.bkwak.springparkingapp.session.SessionObject;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class AuthService {
 
@@ -25,9 +27,16 @@ public class AuthService {
 
     public void login(String email, String passwd) {
         Optional<User> userFromDB = Optional.ofNullable(userRepository.findByEmail(email));
+        log.info("Email " + email);
+        log.info("Password " + passwd);
+        log.info("found user: " + userFromDB);
+//        log.info(String.valueOf(userFromDB.isPresent()));
+//        log.info(String.valueOf(userFromDB.get().getPassword()));
         if (userFromDB.isPresent() &&
                 userFromDB.get().getPassword().equals(DigestUtils.md5Hex(passwd))) {
             this.sessionObj.setLoggedUser(userFromDB.get());
+        } else {
+            log.info("user doesn't match");
         }
     }
 

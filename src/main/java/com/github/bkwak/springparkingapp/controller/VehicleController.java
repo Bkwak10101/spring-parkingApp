@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @Slf4j
 @RestController
 @RequestMapping("/vehicle")
@@ -29,4 +31,11 @@ public class VehicleController {
         newVehicle.setUser(user);
         return vehicleRepository.save(newVehicle);
     }
+
+    @CrossOrigin
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+    private Optional<Vehicle> getById(@PathVariable final Long id){
+        return vehicleRepository.findById(id);
+    }
+
 }
