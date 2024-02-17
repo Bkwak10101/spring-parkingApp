@@ -2,31 +2,55 @@ package com.github.bkwak.springparkingapp.controller;
 
 import com.github.bkwak.springparkingapp.model.User;
 import com.github.bkwak.springparkingapp.service.AuthService;
+import com.github.bkwak.springparkingapp.session.SessionObject;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
 @RequestMapping("/api")
 public class AuthController {
+
     @Autowired
     private AuthService authService;
 
-    @CrossOrigin
-    @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User user) {
-        boolean isAuthenticated = authService.authenticate(user.getEmail(), user.getPassword());
+    @Resource
+    SessionObject sessionObject;
 
-        if (isAuthenticated) {
-            // TODO: Return JSON Web Token
-            log.info("Login successful");
-            return ResponseEntity.ok("Login successful");
+    @CrossOrigin
+    @RequestMapping(path = "/login", method = RequestMethod.GET)
+    public String login(Model model) {
+        model.addAttribute("user", new User());
+        model.addAttribute("isLogged",
+                this.sessionObject.isLogged());
+        return "login";
+    }
+
+    @CrossOrigin
+    @RequestMapping(path = "/login", method = RequestMethod.POST)
+    public String login(@ModelAttribute User user, Model model) {
+        log.info("HALO");
+        model.addAttribute("isLogged",
+                sessionObject.isLogged());
+
+        this.authService.login(user.getEmail(), user.getPassword());
+
+        if (this.sessionObject.isLogged()) {
+            model.addAttribute("logged", true);
+            return "redirect:/main";
         } else {
-            log.info("Login Error");
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login Error");
+            model.addAttribute("logged", false);
+            return "login";
         }
+    }
+
+    @CrossOrigin
+    @RequestMapping(path = "/logout", method = RequestMethod.GET)
+    public String logout() {
+        this.authService.logout();
+        return "redirect:/main";
     }
 }

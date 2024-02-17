@@ -15,5 +15,10 @@
             <column name="name" value="Parking Pod Wawelem"/>
             <column name="address" value="Plac Wszystkich Świętych 10, 31-004 Kraków, Polska"/>
         </insert>
+        <insert tableName="parking">
+            <column name="parking_id" value="3"/>
+            <column name="name" value="Parking obok Placu Matejki"/>
+            <column name="address" value="Ignacego Jana Paderewskiego 6, 31-154 Kraków, Polska"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>

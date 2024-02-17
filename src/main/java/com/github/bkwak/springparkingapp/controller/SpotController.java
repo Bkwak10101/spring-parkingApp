@@ -14,6 +14,7 @@ import java.util.Optional;
 @RequestMapping("/spot")
 @RequiredArgsConstructor
 public class SpotController {
+
     private final SpotRepository spotRepository;
 
     @CrossOrigin
@@ -23,9 +24,9 @@ public class SpotController {
     }
 
     @CrossOrigin
-    @GetMapping("/unavailable")
-    public @ResponseBody List<Spot> getAllUnavailableSpots() {
-        return spotRepository.findByAvailabilityFalse();
+    @GetMapping("/available")
+    public @ResponseBody List<Spot> getAllAvailableSpots() {
+        return spotRepository.findByAvailabilityTrue();
     }
 
     @CrossOrigin

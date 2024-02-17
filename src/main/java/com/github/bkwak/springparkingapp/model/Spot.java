@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Spot {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long spot_id;
