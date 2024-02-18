@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -20,6 +21,12 @@ public class VehicleController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @CrossOrigin
+    @GetMapping("/all")
+    public @ResponseBody List<Vehicle> getAllVehicles() {
+        return vehicleRepository.findAll();
+    }
 
     @CrossOrigin
     @PostMapping("/create")
@@ -38,4 +45,11 @@ public class VehicleController {
         return vehicleRepository.findById(id);
     }
 
+    @CrossOrigin
+    @RequestMapping(path = "/{registrationNum}", method = RequestMethod.GET)
+    private Vehicle getByRegistrationNum(@PathVariable final String registrationNum){
+        return vehicleRepository.findByRegistrationNum(registrationNum);
+    }
+
+    //TODO: Refactor with Optional<Object>
 }

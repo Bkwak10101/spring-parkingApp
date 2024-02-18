@@ -25,4 +25,9 @@ public class Spot {
 
     @Column(name = "availability")
     private Boolean availability;
+
+    public Spot(Parking parking_id, String spotNumber) {
+        this.parking_id = parking_id;
+        this.spotNumber = spotNumber;
+    }
 }

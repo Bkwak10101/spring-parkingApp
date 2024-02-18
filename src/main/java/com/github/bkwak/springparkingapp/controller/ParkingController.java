@@ -19,4 +19,10 @@ public class ParkingController {
     public @ResponseBody List<Parking> getAllParking() {
         return parkingRepository.findAll();
     }
+
+    @CrossOrigin
+    @GetMapping("/{name}")
+    public @ResponseBody Parking getParkingByName(@PathVariable final String name) {
+        return parkingRepository.findByName(name);
+    }
 }

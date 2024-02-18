@@ -3,7 +3,6 @@ package com.github.bkwak.springparkingapp.controller;
 import com.github.bkwak.springparkingapp.model.Spot;
 import com.github.bkwak.springparkingapp.repository.SpotRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,9 +30,12 @@ public class SpotController {
 
     @CrossOrigin
     @GetMapping("/{id}")
-    public ResponseEntity<Spot> getSpotById(@PathVariable Long id) {
-        Optional<Spot> spot = spotRepository.findById(id);
+    public Optional<Spot> getSpotById(@PathVariable Long id) {
+        return spotRepository.findById(id);
+    }
 
-        return spot.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    @GetMapping("/{parkingId}/{spotNum}")
+    public Spot getSpotByParkingIdAndSpotNumber(@PathVariable Long parkingId, @PathVariable String spotNum) {
+        return spotRepository.findSpotByParking_idAndSpotNumber(parkingId, spotNum);
     }
 }
