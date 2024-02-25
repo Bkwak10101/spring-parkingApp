@@ -22,9 +22,6 @@
             <column name="user_id" type="bigint">
                 <constraints foreignKeyName="fk_reservation_user" references="user(user_id)"/>
             </column>
-            <column name="spot_id" type="bigint">
-                <constraints foreignKeyName="fk_reservation_spot" references="spot(spot_id)"/>
-            </column>
             <column name="vehicle_id" type="bigint">
                 <constraints foreignKeyName="fk_reservation_vehicle" references="vehicle(vehicle_id)"/>
             </column>

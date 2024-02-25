@@ -13,7 +13,7 @@ public interface SpotRepository extends JpaRepository<Spot, Long> {
 
     List<Spot> findByAvailabilityTrue();
 
-    @Query("SELECT s FROM Spot s WHERE s.parking_id = :parkingId AND s.spotNumber = :spotNumber")
+    @Query("SELECT s FROM Spot s WHERE s.parking_id.parking_id = :parkingId AND s.spotNumber = :spotNumber")
     Spot findSpotByParking_idAndSpotNumber(@Param("parkingId") Long parkingId, @Param("spotNumber") String spotNumber);
 
 }

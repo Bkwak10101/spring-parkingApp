@@ -21,8 +21,8 @@ public class Reservation {
     @JoinColumn(name = "user_id")
     private User user_id;
 
-    @OneToMany()
-    private List<Spot> spot;
+    @OneToMany(mappedBy = "reservation_id")
+    private List<Spot> spots;
 
     @OneToOne
     @JoinColumn(name = "vehicle_id", nullable = false)

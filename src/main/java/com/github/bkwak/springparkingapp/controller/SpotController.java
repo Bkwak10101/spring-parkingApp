@@ -34,6 +34,7 @@ public class SpotController {
         return spotRepository.findById(id);
     }
 
+    @CrossOrigin
     @GetMapping("/{parkingId}/{spotNum}")
     public Spot getSpotByParkingIdAndSpotNumber(@PathVariable Long parkingId, @PathVariable String spotNum) {
         return spotRepository.findSpotByParking_idAndSpotNumber(parkingId, spotNum);

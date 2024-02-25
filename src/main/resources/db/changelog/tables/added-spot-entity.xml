@@ -19,6 +19,9 @@
             <column name="spot_id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="reservation_id" type="bigint">
+                <constraints foreignKeyName="fk_spot_reservation" references="reservation(reservation_id)"/>
+            </column>
             <column name="parking_id" type="bigint">
                 <constraints foreignKeyName="fk_spot_parking" references="parking(parking_id)"/>
             </column>

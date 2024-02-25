@@ -40,14 +40,15 @@ public class VehicleController {
     }
 
     @CrossOrigin
-    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/id/{id}", method = RequestMethod.GET)
     private Optional<Vehicle> getById(@PathVariable final Long id){
         return vehicleRepository.findById(id);
     }
 
     @CrossOrigin
-    @RequestMapping(path = "/{registrationNum}", method = RequestMethod.GET)
+    @RequestMapping(path = "/num/{registrationNum}", method = RequestMethod.GET)
     private Vehicle getByRegistrationNum(@PathVariable final String registrationNum){
+        log.info(vehicleRepository.findByRegistrationNum(registrationNum).toString());
         return vehicleRepository.findByRegistrationNum(registrationNum);
     }
 
