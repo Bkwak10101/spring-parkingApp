@@ -44,6 +44,7 @@ public class ReservationController {
         log.info(newReservation.toString());
         return ResponseEntity.ok(newReservation);
     }
+
     @PutMapping("/{spotId}")
     public ResponseEntity<?> updateSpotAvailability(@PathVariable Long spotId) {
         Spot spot = spotRepository.findById(spotId)
